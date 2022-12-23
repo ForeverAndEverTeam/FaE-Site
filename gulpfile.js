@@ -66,13 +66,13 @@ function js() {
 }
 
 function css() {
-	const sass = require("gulp-sass");
+	const sass = require("gulp-sass")(require("sass"));
 	const csso = require("gulp-csso");
 	const concat = require("gulp-concat");
 	const postcss = require("gulp-postcss");
 	const autoprefixer = require("autoprefixer");
 
-	sass.compiler = require("node-sass");
+	sass.compiler = require("sass");
 
 	return pipeline(
 		gulp.src(SCSS_DIR, OPTS),
